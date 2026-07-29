@@ -434,6 +434,7 @@ a:hover {
 }
 
 /* ========== Projects ========== */
+/* ========== Projects ========== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -470,6 +471,35 @@ a:hover {
   transform: scale(1.05);
 }
 
+/* Container for multiple buttons */
+.project-links {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* New button style */
+.project-btn {
+  padding: 0.4rem 0.8rem;
+  background: var(--accent);
+  color: var(--bg-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  opacity: 0.95;
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  color: var(--bg-dark);
+}
+
+/* OLD single button style (keeps existing cards working) */
 .project-video-link {
   position: absolute;
   bottom: 0.75rem;
@@ -480,14 +510,16 @@ a:hover {
   font-size: 0.85rem;
   font-weight: 600;
   border-radius: 4px;
+  text-decoration: none;
   opacity: 0.95;
+  transition: all 0.3s ease;
 }
 
 .project-video-link:hover {
   opacity: 1;
+  transform: translateY(-2px);
   color: var(--bg-dark);
 }
- 
 
 .project-body {
   padding: 1.5rem;
@@ -504,7 +536,6 @@ a:hover {
   color: var(--text-muted);
   font-size: 0.95rem;
 }
-
 /* ========== Academics ========== */
 .academics-grid {
   display: grid;
