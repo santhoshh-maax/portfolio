@@ -1,4 +1,5 @@
-# Santhosh Panneer Selvam | Portfolio
+# Santhosh Panneer Selvam | Portfolio  (https://github.com/sponsors/santhoshh-maax)   
+[![Sponsor](https://img.shields.io/badge/Sponsor-GitHub-db61a2?style=flat&logo=github-sponsors)](https://github.com/sponsors/santhoshh-maax) [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N51YFMS9)
 
 Personal portfolio website for **Santhosh Panneer Selvam** — B.E. Computer Science & Engineering student and Robotics & Automation enthusiast. Built as a single-page site showcasing projects, academic achievements, certifications, and contact details.
 
@@ -68,11 +69,28 @@ This is a static site with no build step required.
 
 The site is deployed via **GitHub Pages**. Any changes pushed to the default branch are reflected automatically at the live URL above.
 
-## Contact
+
+# 👨‍💻 Author
+
+**Santhosh P**
+
+B.E. Computer Science and Engineering
+
+Mount Zion College of Engineering and Technology
 
 - **Email:** santhoshpanneer03@gmail.com
-- **Portfolio:** https://santhoshh-maax.github.io/portfolio/
 
-## License
+👉 **[Sponsor me on GitHub](https://github.com/sponsors/santhoshh-maax)**
 
-This project is personal portfolio work. Feel free to reference the structure, but please don't reuse the content or branding as your own.
+---
+
+# ⭐ Support
+
+If you found this project useful, please consider giving this repository a **⭐ Star**.
+
+---
+
+# 📜 License
+
+This project is developed for educational and learning purposes.
+
