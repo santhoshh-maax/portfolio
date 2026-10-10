@@ -65,15 +65,15 @@
     <div class="circuit-line"></div>
   </div>
   <div class="hero-content">
-    <p class="hero-tag">B.E. Computer Science & Engineering</p>
+    <p class="hero-tag"><i class="fa-solid fa-microchip"></i> B.E. Computer Science & Engineering</p>
     <h1 class="animate-name">San<span class="accent">thosh</span> Panneer Selvam</h1>
     <p class="hero-sub">AI, Robotics & Automation Enthusiast</p>
     <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary">Get in Touch</a>
-      <a href="resume.pdf" class="btn btn-secondary" download>Download Resume</a>
-
+      <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+      <a href="resume.pdf" class="btn btn-secondary" download><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
     </div>
   </div>
+
   <div class="scroll-indicator">
     <span>Scroll</span>
     <div class="scroll-line"></div>
@@ -962,6 +962,56 @@
 
   </div>
 </section>
+
+<!-- Floating Chatbot Button & Widget Drawer -->
+<div class="floating-chat-wrapper">
+  <button type="button" id="floating-chat-toggle" class="floating-chat-btn" aria-label="Open SP Portfolio Guide">
+    <div class="floating-chat-icon">
+      <i class="fa-solid fa-compass"></i>
+      <span class="floating-pulse"></span>
+    </div>
+    <span class="floating-chat-label">Portfolio Guide</span>
+  </button>
+
+  <div class="chat-drawer" id="chat-drawer" hidden>
+    <div class="chat-card drawer-chat-card">
+      <div class="chat-header">
+        <div class="chat-avatar">
+          <i class="fa-solid fa-compass"></i>
+          <span class="status-dot"></span>
+        </div>
+        <div class="chat-title-group">
+          <h3>SP Portfolio Guide</h3>
+          <span class="chat-status">Interactive Portfolio Assistant & Guide</span>
+        </div>
+        <button type="button" class="chat-close-btn" id="drawer-chat-close" aria-label="Close Chat">
+          &times;
+        </button>
+      </div>
+
+      <div class="chat-messages" id="drawer-chat-messages">
+        <!-- Messages synced via JS -->
+      </div>
+
+      <div class="chat-quick-prompts" id="drawer-chat-prompts">
+        <button type="button" class="prompt-chip" data-prompt="Who is Santhosh?">👤 Profile</button>
+        <button type="button" class="prompt-chip" data-prompt="What college is he studying at?">🎓 College</button>
+        <button type="button" class="prompt-chip" data-prompt="Show featured projects">🚀 Projects</button>
+        <button type="button" class="prompt-chip" data-prompt="What is his work experience?">💼 Experience</button>
+        <button type="button" class="prompt-chip" data-prompt="Tell me about AWS certification & awards">🏆 AWS & Certs</button>
+        <button type="button" class="prompt-chip" data-prompt="Tell me about National Service">🎖️ Army Service</button>
+        <button type="button" class="prompt-chip" data-prompt="How can I contact Santhosh?">📩 Contact</button>
+      </div>
+
+      <form class="chat-input-area" id="drawer-chat-form">
+        <input type="text" id="drawer-chat-input" placeholder="Ask anything to guide your visit..." autocomplete="off" required>
+        <button type="submit" class="chat-send-btn" aria-label="Send message">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="footer">
