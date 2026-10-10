@@ -199,70 +199,59 @@
     const nameElement = document.querySelector('.animate-name');
     if (!nameElement) return;
 
-    // Use a data-attribute to store original text if not already stored
-    // This allows us to reset cleanly
-    if (!nameElement.dataset.originalText) {
-      // First run: Parse the DOM to get text and structure
-      // Simple approach: stick to rebuild logic but we need to ensure we don't parse the ALREADY split spans.
-      // If it has .letter, it's already animated. We should rebuild from what?
-      // Safest: Store the structure in memory or just re-run the split on the textContent if structure is simple.
-      // Since we have an inner span .accent, simple textContent won't work perfectly.
-      // Let's rely on the fact that we can just rebuild it if we persist the original HTML?
-      // nameElement.dataset.originalHtml = nameElement.innerHTML; 
-      // BUT if we run this on page load, the HTML is clean.
-    }
-
-    // Actually, simpler: define the content we want.
-    // "Santhosh" + <span class="accent">Panneer Selvam</span> ? 
-    // Wait, the original HTML was: San<span class="accent">thosh</span> Panneer Selvam
-
-    // Let's hardcode the structure rebuild to make it robust for replay
     nameElement.innerHTML = '';
 
-    const part1 = "San";
-    const part2 = "thosh"; // accent
-    const part3 = " Panneer Selvam";
+    const words = [
+      {
+        parts: [
+          { text: "San", className: "" },
+          { text: "thosh", className: "accent" }
+        ]
+      },
+      {
+        parts: [
+          { text: "Panneer", className: "" }
+        ]
+      },
+      {
+        parts: [
+          { text: "Selvam", className: "" }
+        ]
+      }
+    ];
 
     let delayCounter = 0;
-    const delayIncrement = 0.1; // Slower speed requested
+    const delayIncrement = 0.08;
 
-    // Part 1
-    const span1 = document.createElement('span');
-    part1.split('').forEach(char => {
-      const charSpan = document.createElement('span');
-      charSpan.textContent = char;
-      charSpan.className = 'letter';
-      charSpan.style.setProperty('--delay', `${delayCounter}s`);
-      span1.appendChild(charSpan);
-      delayCounter += delayIncrement;
-    });
-    nameElement.appendChild(span1);
+    words.forEach((wordObj, index) => {
+      if (index > 0) {
+        const spaceSpan = document.createElement('span');
+        spaceSpan.innerHTML = '&nbsp;';
+        spaceSpan.className = 'word-space';
+        nameElement.appendChild(spaceSpan);
+      }
 
-    // Part 2 (Accent)
-    const span2 = document.createElement('span');
-    span2.className = 'accent';
-    part2.split('').forEach(char => {
-      const charSpan = document.createElement('span');
-      charSpan.textContent = char;
-      charSpan.className = 'letter';
-      charSpan.style.setProperty('--delay', `${delayCounter}s`);
-      span2.appendChild(charSpan);
-      delayCounter += delayIncrement;
-    });
-    nameElement.appendChild(span2);
+      const wordSpan = document.createElement('span');
+      wordSpan.className = 'word';
 
-    // Part 3
-    const span3 = document.createElement('span');
-    part3.split('').forEach(char => {
-      const charSpan = document.createElement('span');
-      charSpan.textContent = char;
-      charSpan.className = 'letter';
-      charSpan.style.setProperty('--delay', `${delayCounter}s`);
-      if (char === ' ') charSpan.innerHTML = '&nbsp;';
-      span3.appendChild(charSpan);
-      delayCounter += delayIncrement;
+      wordObj.parts.forEach(part => {
+        const partSpan = document.createElement('span');
+        if (part.className) partSpan.className = part.className;
+
+        part.text.split('').forEach(char => {
+          const charSpan = document.createElement('span');
+          charSpan.textContent = char;
+          charSpan.className = 'letter';
+          charSpan.style.setProperty('--delay', `${delayCounter}s`);
+          partSpan.appendChild(charSpan);
+          delayCounter += delayIncrement;
+        });
+
+        wordSpan.appendChild(partSpan);
+      });
+
+      nameElement.appendChild(wordSpan);
     });
-    nameElement.appendChild(span3);
   }
 
   // Run on load
