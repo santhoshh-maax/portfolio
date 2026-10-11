@@ -177,6 +177,44 @@
     });
   });
 
+  // ----- Photography Grid Lightbox & Toggle -----
+  var photoCards = document.querySelectorAll('.photo-card');
+  if (photoCards.length) {
+    photoCards.forEach(function (card, index) {
+      card.addEventListener('click', function (e) {
+        var allPhotoData = Array.from(photoCards).map(function (c, idx) {
+          var img = c.querySelector('img');
+          return {
+            src: img ? img.src : '',
+            alt: img ? img.alt : 'Santhosh Photography #' + (idx + 1),
+            caption: '@santhosh_frames • Photography Frame #' + (idx + 1)
+          };
+        });
+        var clickedImg = card.querySelector('img');
+        if (clickedImg) {
+          openLightbox(clickedImg.src, allPhotoData, index);
+        }
+      });
+    });
+  }
+
+  var toggleAllPhotosBtn = document.getElementById('toggle-all-photos-btn');
+  var photoGrid = document.getElementById('photo-grid');
+  if (toggleAllPhotosBtn && photoGrid) {
+    toggleAllPhotosBtn.addEventListener('click', function () {
+      var isExpanded = photoGrid.classList.toggle('show-all');
+      if (isExpanded) {
+        toggleAllPhotosBtn.innerHTML = '<i class="fa-solid fa-compress"></i> Show Fewer Photos';
+      } else {
+        toggleAllPhotosBtn.innerHTML = '<i class="fa-solid fa-expand"></i> Show All ' + photoCards.length + ' Photographs';
+        var photoSection = document.getElementById('photography');
+        if (photoSection) {
+          photoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  }
+
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
     var openModal = document.querySelector('.gallery-modal.is-open');
@@ -295,6 +333,14 @@
 
   // Explicit Portfolio Q&A Knowledge Base
   const portfolioQA = [
+    {
+      patterns: [/photograph/i, /photo/i, /picture/i, /instagram/i, /insta\b/i, /camera/i, /nikon/i, /d5600/i, /frames/i, /shoot/i],
+      answer: "📷 <strong>Santhosh's Photography & Instagram (@santhosh_frames):</strong><br>Santhosh is also a passionate freelance photographer operating under <strong>@santhosh_frames</strong>. He shoots with a <strong>Nikon D5600</strong>, specializing in pre-weddings, birthdays, small events, and candid frames across Karaikudi and Singapore.<br><br>Check out his 35+ photographs directly in his portfolio or follow him on Instagram!",
+      actions: [
+        { text: '📷 Scroll to Photography', type: 'scroll', target: '#photography' },
+        { text: '📸 Open Instagram Profile', type: 'link', url: 'https://www.instagram.com/santhosh_frames/' }
+      ]
+    },
     {
       patterns: [/college/i, /university/i, /where.*studying/i, /studying at/i, /which college/i, /institution/i, /mount zion/i],
       answer: "🎓 Santhosh is pursuing his B.E. in Computer Science & Engineering at <strong>Mount Zion College of Engineering and Technology</strong> (2023–2027)."
