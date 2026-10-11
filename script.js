@@ -316,7 +316,42 @@
       answer: "📱 Santhosh worked as a <strong>Mobile App Developer Intern at Zedindex</strong> (Jun 2026 – July 2026, 1 Month), building cross-platform mobile applications using Flutter and Dart."
     },
     {
-      patterns: [/experience/i, /work experience/i, /internship/i, /career/i, /timeline/i, /work history/i, /past jobs?/i, /previous jobs?/i, /where.*worked?/i],
+      patterns: [
+        /proficien/i,
+        /technical/i,
+        /tools?\s*experience/i,
+        /skills?\s*experience/i,
+        /skills?\s*breakdown/i,
+        /how\s*much.*experience/i,
+        /years?\s*of\s*experience/i,
+        /i\s*work\s*with/i,
+        /tech\s*stack/i,
+        /programming\s*languages?/i,
+        /tools?/i,
+        /technolog/i,
+        /frameworks?/i,
+        /skills?/i
+      ],
+      answer: "🛠️ <strong>Experience & Technical Proficiency Breakdown:</strong><br>• <strong>Robotics & Hardware:</strong> Arduino (2+ Yrs, 85%), Embedded C (2+ Yrs, 80%), Python (2+ Yrs, 85%), Ubuntu Linux (2+ Yrs, 80%)<br>• <strong>App & Web:</strong> Flutter & Dart (1.5+ Yrs, 85%), HTML5 & CSS3 (2+ Yrs, 90%), JavaScript (2+ Yrs, 80%), Node.js & Laravel (1+ Yr, 75%)<br>• <strong>Cloud & DevOps:</strong> AWS (1+ Yr, 85% — Certified Data Engineer), Git & GitHub (2+ Yrs, 90%), Docker (1+ Yr, 75%), Postman (1.5+ Yrs, 85%)<br>• <strong>Databases & IDEs:</strong> MongoDB & MSSQL (1.5+ Yrs, 80%), VS Code (2+ Yrs, 95%), Android Studio (1.5+ Yrs, 80%)",
+      actions: [
+        { text: '🛠️ Scroll to Tools Section', type: 'scroll', target: '#about' },
+        { text: '🚀 Show Top Projects', type: 'prompt', value: 'Show featured projects' }
+      ]
+    },
+    {
+      patterns: [
+        /work\s*experience/i,
+        /job\s*experience/i,
+        /internship/i,
+        /career/i,
+        /timeline/i,
+        /work\s*history/i,
+        /past\s*jobs?/i,
+        /previous\s*jobs?/i,
+        /where.*worked/i,
+        /employment/i,
+        /^(?=.*experience)(?!.*(technical|proficiency|tool|stack|hardware|language)).*$/i
+      ],
       answer: "💼 <strong>Professional Work Experience & Timeline:</strong><br>• <strong>Forward Deployed Engineer (FDE)</strong> @ <em>Glacien.ai</em> (Aug 2026 – Present)<br>  Focus: AI research, software integration & cutting-edge AI tech.<br>• <strong>Mobile App Developer Intern</strong> @ <em>Zedindex</em> (Jun 2026 – July 2026, 1 Month)<br>  Focus: Cross-platform mobile applications in Flutter & Dart.<br>• <strong>Combat Medic (CFC)</strong> @ <em>Singapore Armed Forces (SAF)</em> (Aug 2021 – Aug 2023, 1.5 Years)<br>  Focus: Field medical support, emergency care, NDP ambulance medic, with official Doctor Recommendation Letter.",
       actions: [
         { text: '💼 Scroll to Experience', type: 'scroll', target: '#experience' },
@@ -420,14 +455,7 @@
       answer: "🚀 <strong>Santhosh's Top Projects:</strong><br>1. 🤖 <em>Road Bot</em> — AI Pothole Repair Rover<br>2. 🧠 <em>RAG Chatbot</em> — MongoDB Vector & Ollama<br>3. 🩼 <em>Step Assist</em> — Smart IoT Crutch<br>4. 📱 <em>Todo's Lah</em> — Flutter App<br>5. 🚽 <em>Smart Toilet System</em> — ESP32 & Telegram<br>6. 🖐️ <em>Gesture Control</em> — MediaPipe & OpenCV<br>7. 🌱 <em>Automated Plant Monitor</em> — Arduino & SMS",
       actions: [{ text: '🚀 Scroll to Projects', type: 'scroll', target: '#projects' }]
     },
-    {
-      patterns: [/skills/i, /programming/i, /languages/i, /stack/i, /tech stack/i, /tools/i, /technologies/i, /frameworks/i, /proficiency/i, /technical proficiency/i, /how much.*experience/i, /tools experience/i, /years of experience/i, /skill.*experience/i, /skills breakdown/i, /i work with/i],
-      answer: "🛠️ <strong>Experience & Technical Proficiency Breakdown:</strong><br>• <strong>Robotics & Hardware:</strong> Arduino (2+ Yrs, 85%), Embedded C (2+ Yrs, 80%), Python (2+ Yrs, 85%), Ubuntu Linux (2+ Yrs, 80%)<br>• <strong>App & Web:</strong> Flutter & Dart (1.5+ Yrs, 85%), HTML5 & CSS3 (2+ Yrs, 90%), JavaScript (2+ Yrs, 80%), Node.js & Laravel (1+ Yr, 75%)<br>• <strong>Cloud & DevOps:</strong> AWS (1+ Yr, 85% — Certified Data Engineer), Git & GitHub (2+ Yrs, 90%), Docker (1+ Yr, 75%), Postman (1.5+ Yrs, 85%)<br>• <strong>Databases & IDEs:</strong> MongoDB & MSSQL (1.5+ Yrs, 80%), VS Code (2+ Yrs, 95%), Android Studio (1.5+ Yrs, 80%)",
-      actions: [
-        { text: '🛠️ Scroll to Tools Section', type: 'scroll', target: '#about' },
-        { text: '🚀 Show Top Projects', type: 'prompt', value: 'Show featured projects' }
-      ]
-    },
+
     {
       patterns: [/who is/i, /about/i, /bio/i, /profile/i, /background/i, /overview/i, /who/i],
       answer: "<strong>Santhosh Panneer Selvam</strong> is a B.E. Computer Science & Engineering student at Mount Zion College of Engineering and Technology, specializing in AI, Robotics, Automation, and IoT hardware systems. Currently working as a Forward Deployed Engineer (FDE) at Glacien.ai!",
