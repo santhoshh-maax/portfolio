@@ -44,6 +44,7 @@ body {
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="2.5" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"></path></svg>') 11 6, auto;
 }
 
 a {
@@ -476,6 +477,170 @@ a:hover {
   border-bottom: none;
 }
 
+/* ========== Recommendation Letter Component ========== */
+.rec-letter-wrapper {
+  margin-top: 1.5rem;
+  border-top: 1px dashed var(--border);
+  padding-top: 1.5rem;
+}
+
+.recommendation-letter-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.5rem;
+  background: rgba(10, 14, 23, 0.7);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.25rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommendation-letter-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 30px rgba(0, 212, 170, 0.15);
+  transform: translateY(-2px);
+}
+
+.rec-letter-preview {
+  position: relative;
+  width: 100%;
+}
+
+.rec-letter-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.rec-letter-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+.rec-letter-img-wrapper:hover .rec-letter-img {
+  transform: scale(1.06);
+}
+
+.rec-letter-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 14, 23, 0.82);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.rec-letter-overlay i {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.rec-letter-img-wrapper:hover .rec-letter-overlay {
+  opacity: 1;
+}
+
+.rec-letter-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.rec-letter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(0, 212, 170, 0.12);
+  color: var(--accent);
+  border: 1px solid var(--accent-glow);
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
+
+.rec-letter-details h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: #fff;
+  margin: 0;
+}
+
+.rec-letter-author {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin: 0;
+}
+
+.rec-letter-title {
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin: 0;
+}
+
+.rec-letter-quote {
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  border-left: 2px solid var(--accent);
+  padding-left: 0.75rem;
+  margin: 0.4rem 0;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0 4px 4px 0;
+}
+
+.rec-letter-btn {
+  margin-top: 0.3rem;
+  align-self: flex-start;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .recommendation-letter-card {
+    grid-template-columns: 1fr;
+  }
+  .rec-letter-img-wrapper {
+    height: 200px;
+  }
+}
+
 /* ========== Experience Section ========== */
 .experience-section {
   background: var(--bg-dark);
@@ -893,11 +1058,13 @@ a:hover {
 }
 
 #lightbox-img {
-  max-width: 100%;
-  max-height: 75vh;
+  max-width: 92vw;
+  max-height: 85vh;
   width: auto;
   height: auto;
   object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
 }
 
 .lightbox-caption {
@@ -1259,6 +1426,13 @@ a:hover {
   border-radius: 8px;
   margin-bottom: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ns-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 30px rgba(0, 212, 170, 0.4);
 }
 
 .ns-info {
