@@ -629,4 +629,27 @@
       chatDrawer.setAttribute('hidden', '');
     });
   }
+
+  // ----- Tools Filter Tabs -----
+  var toolFilterBtns = document.querySelectorAll('.tool-filter-btn');
+  var toolDetailCards = document.querySelectorAll('.tool-detail-card');
+  if (toolFilterBtns.length && toolDetailCards.length) {
+    toolFilterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var filter = btn.getAttribute('data-filter');
+        toolFilterBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        toolDetailCards.forEach(function (card) {
+          var category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+            card.style.animation = 'fadeInCard 0.3s ease forwards';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
 })();
