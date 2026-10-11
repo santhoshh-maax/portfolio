@@ -2039,19 +2039,52 @@ a:hover {
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .contact-card {
   background: var(--bg-card);
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid var(--border);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 25px rgba(0, 212, 170, 0.12);
+  transform: translateY(-2px);
 }
 
 .contact-card h4 {
   margin-bottom: 0.5rem;
   color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.contact-location-text {
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact-location-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--accent);
+  font-weight: 600;
+  transition: gap 0.2s, color 0.2s;
+}
+
+.contact-location-link:hover {
+  color: #fff;
+  gap: 0.75rem;
 }
 
 /* ========== Social Icons Minimal ========== */
