@@ -694,14 +694,36 @@ a:hover {
   font-size: 1.05rem;
 }
 
+.exp-time-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.exp-date {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.exp-date i {
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
 .exp-period {
   background: rgba(0, 212, 170, 0.1);
   color: var(--accent);
   border: 1px solid var(--accent-dim);
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .exp-description {
