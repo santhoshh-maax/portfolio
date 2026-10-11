@@ -334,11 +334,27 @@
   // Explicit Portfolio Q&A Knowledge Base
   const portfolioQA = [
     {
-      patterns: [/photograph/i, /photo/i, /picture/i, /instagram/i, /insta\b/i, /camera/i, /nikon/i, /d5600/i, /frames/i, /shoot/i],
-      answer: "📷 <strong>Santhosh's Photography & Instagram (@santhosh_frames):</strong><br>Santhosh is also a passionate freelance photographer operating under <strong>@santhosh_frames</strong>. He shoots with a <strong>Nikon D5600</strong>, specializing in pre-weddings, birthdays, small events, and candid frames across Karaikudi and Singapore.<br><br>Check out his 35+ photographs directly in his portfolio or follow him on Instagram!",
+      patterns: [/camera/i, /gear/i, /equipment/i, /nikon/i, /d5600/i, /lens/i, /oppo\s*(a3|reno)?/i],
+      answer: "📸 <strong>Photography Gear & Equipment:</strong><br>• <strong>DSLR:</strong> Nikon D5600 for sharp portraits, bokeh, and professional event coverage.<br>• <strong>Mobile Cameras:</strong> Oppo A3 Pro and Oppo Reno 7z for candid street snaps and creative on-the-go perspectives.<br><br>Check out the live shots taken with his gear in the Photography section or on Instagram at <strong>@santhosh_frames</strong>!",
+      actions: [
+        { text: '📷 View Photography Grid', type: 'scroll', target: '#photography' },
+        { text: '📸 View Instagram Highlights', type: 'link', url: 'https://www.instagram.com/santhosh_frames/' }
+      ]
+    },
+    {
+      patterns: [/shoot/i, /pre-wedding/i, /pre\s*wedding/i, /wedding/i, /birthday/i, /hire.*photograph/i, /affordable\s*shoot/i, /booking/i, /book.*photo/i, /event.*shoot/i],
+      answer: "💍 <strong>Event Shoots & Photography Booking:</strong><br>Santhosh provides affordable freelance photography services for:<br>• <strong>Pre-Weddings & Couple Sessions</strong><br>• <strong>Birthday Celebrations & Private Gatherings</strong><br>• <strong>Small Cultural & Family Events</strong><br>• <strong>Portrait & Outdoor Shoots</strong><br><br>📍 Operating in <strong>Kallur, Karaikudi</strong> and <strong>Singapore</strong>. To inquire or book a shoot, message him on Instagram <strong>@santhosh_frames</strong> or send a message via the Contact form!",
+      actions: [
+        { text: '📩 Book via Contact Form', type: 'scroll', target: '#contact' },
+        { text: '📸 DM on Instagram', type: 'link', url: 'https://www.instagram.com/santhosh_frames/' }
+      ]
+    },
+    {
+      patterns: [/photograph/i, /photo/i, /picture/i, /instagram/i, /insta\b/i, /santhosh_frames/i, /frames\b/i, /gallery/i, /portfolio\s*photos?/i],
+      answer: "📷 <strong>Santhosh's Photography & Instagram (@santhosh_frames):</strong><br>Santhosh is also an avid freelance photographer running <strong>@santhosh_frames</strong>. He captures visual stories, landscapes, and special occasions across Karaikudi and Singapore.<br><br>• <strong>Primary Camera:</strong> Nikon D5600 DSLR<br>• <strong>Mobile Frames:</strong> Oppo A3 Pro & Oppo Reno 7z<br>• <strong>Specialties:</strong> Pre-Weddings, Birthdays, Small Events, Outdoor & Candid Shoots<br>• <strong>Gallery:</strong> 35+ high-resolution photographs featured on his portfolio grid with interactive Lightbox zoom!",
       actions: [
         { text: '📷 Scroll to Photography', type: 'scroll', target: '#photography' },
-        { text: '📸 Open Instagram Profile', type: 'link', url: 'https://www.instagram.com/santhosh_frames/' }
+        { text: '📸 Open Instagram @santhosh_frames', type: 'link', url: 'https://www.instagram.com/santhosh_frames/' }
       ]
     },
     {
@@ -525,7 +541,7 @@
     },
     {
       patterns: [/\bhi\b/i, /\bhello\b/i, /\bhey\b/i, /\bstart\b/i, /\bhelp\b/i, /who are you/i],
-      answer: "👋 Hi there! I'm <strong>SP-AI</strong>, Santhosh's Interactive Portfolio Guide. Ask me anything about his projects, Glacien.ai role, Doctor Recommendation Letter, Singapore location, or technical tool proficiencies!"
+      answer: "👋 Hi there! I'm <strong>SP-AI</strong>, Santhosh's Interactive Portfolio Guide. Ask me anything about his projects, Glacien.ai role, Doctor Recommendation Letter, Singapore location, technical skills, or his Photography & Instagram (@santhosh_frames)!"
     }
   ];
 
@@ -546,7 +562,7 @@
       text: "I am not sure about that or I could not find anything related to it in Santhosh's portfolio.",
       actions: [
         { text: '🤖 Who is Santhosh?', type: 'prompt', value: 'Who is Santhosh?' },
-        { text: '🎓 College & Degree', type: 'prompt', value: 'What college is he studying at?' },
+        { text: '📸 Photography & Insta', type: 'prompt', value: 'Tell me about his photography and Instagram' },
         { text: '🚀 Top Projects', type: 'prompt', value: 'Show featured projects' },
         { text: '💼 Experience', type: 'prompt', value: 'What is his work experience?' }
       ]
