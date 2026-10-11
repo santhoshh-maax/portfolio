@@ -309,21 +309,43 @@
     },
     {
       patterns: [/current.*role/i, /current.*job/i, /where.*work/i, /glacien/i, /fde\b/i, /forward deployed/i],
-      answer: "💼 Santhosh currently works as a <strong>Forward Deployed Engineer (FDE) at Glacien.ai</strong>, conducting AI research, software integration, and cutting-edge AI technology development."
+      answer: "💼 Santhosh currently works as a <strong>Forward Deployed Engineer (FDE) at Glacien.ai</strong> (Aug 2026 – Present), engaging in AI research, software integration, and cutting-edge AI technology development."
     },
     {
       patterns: [/zedindex/i, /mobile app.*intern/i, /previous.*intern/i, /previous.*job/i],
-      answer: "📱 Santhosh worked as a <strong>Mobile App Developer Intern at Zedindex</strong> (1 Month), building cross-platform mobile applications using Flutter and Dart."
+      answer: "📱 Santhosh worked as a <strong>Mobile App Developer Intern at Zedindex</strong> (Jun 2026 – July 2026, 1 Month), building cross-platform mobile applications using Flutter and Dart."
     },
     {
-      patterns: [/experience/i, /work experience/i, /internship/i, /career/i],
-      answer: "💼 <strong>Professional Work & Internships:</strong><br>• <strong>Forward Deployed Engineer (FDE)</strong> @ <em>Glacien.ai</em> (Present) — AI research, software integration & tech development.<br>• <strong>Mobile App Developer Intern</strong> @ <em>Zedindex</em> — Built Flutter/Dart cross-platform apps.<br>• <strong>Combat Medic</strong> @ <em>Singapore Armed Forces</em> (1.5 Yrs) — Field medical care & emergency ambulance response.",
-      actions: [{ text: '💼 Scroll to Experience', type: 'scroll', target: '#experience' }]
+      patterns: [/experience/i, /work experience/i, /internship/i, /career/i, /timeline/i, /work history/i, /past jobs?/i, /previous jobs?/i, /where.*worked?/i],
+      answer: "💼 <strong>Professional Work Experience & Timeline:</strong><br>• <strong>Forward Deployed Engineer (FDE)</strong> @ <em>Glacien.ai</em> (Aug 2026 – Present)<br>  Focus: AI research, software integration & cutting-edge AI tech.<br>• <strong>Mobile App Developer Intern</strong> @ <em>Zedindex</em> (Jun 2026 – July 2026, 1 Month)<br>  Focus: Cross-platform mobile applications in Flutter & Dart.<br>• <strong>Combat Medic (CFC)</strong> @ <em>Singapore Armed Forces (SAF)</em> (Aug 2021 – Aug 2023, 1.5 Years)<br>  Focus: Field medical support, emergency care, NDP ambulance medic, with official Doctor Recommendation Letter.",
+      actions: [
+        { text: '💼 Scroll to Experience', type: 'scroll', target: '#experience' },
+        { text: '📄 Recommendation Letter', type: 'prompt', value: 'Tell me about the recommendation letter' }
+      ]
+    },
+    {
+      patterns: [/recommend/i, /commend/i, /reference/i, /doctor.*letter/i, /medical.*letter/i, /lim zheyuan/i, /dr\b.*daniel/i, /daniel/i, /zheyuan/i, /medical officer/i, /\bletter\b/i],
+      answer: "📄 <strong>Medical Center Doctor Recommendation Letter:</strong><br>During his National Service (2021–2023) at Kranji Regional Health Hub (KRHH), Santhosh was awarded an official letter of recommendation by <strong>CPT(DR) Lim Zheyuan Daniel</strong> (Medical Officer, Singapore Armed Forces).<br><br>The doctor commended Santhosh for his <em>high standards as a medic</em>, <em>swift emergency responses</em>, <em>commendations from senior military commanders</em>, and <em>exceptional empathy towards patients</em> during clinical procedures and ambulance duty.",
+      actions: [
+        { text: '📄 Scroll to Recommendation Letter', type: 'scroll', target: '#ns' },
+        { text: '🎖️ Army Service Details', type: 'prompt', value: 'Tell me about National Service' }
+      ]
+    },
+    {
+      patterns: [/locat/i, /where.*(live|stay|staying|based|from|located|santhosh|he|you)/i, /where\s+(is|are)\s+(santhosh|he|you)/i, /address/i, /560321/i, /singapore/i, /maps?/i, /google\s*maps?/i, /city/i, /country/i, /place/i],
+      answer: "📍 <strong>Current Location:</strong><br>Santhosh is based in <strong>Singapore (Postal Code: 560321)</strong>. You can view his exact location on Google Maps or reach out via the contact form!",
+      actions: [
+        { text: '🗺️ Open Google Maps', type: 'link', url: 'https://maps.app.goo.gl/TPyzFZSHfYwwRetH7' },
+        { text: '📍 Scroll to Location', type: 'scroll', target: '#contact' }
+      ]
     },
     {
       patterns: [/army/i, /saf\b/i, /national service/i, /rank/i, /medic/i, /combat medic/i, /kranji/i, /tekong/i, /nee soon/i],
-      answer: "🎖️ Santhosh served 1.5+ years in the <strong>Singapore Armed Forces (SAF)</strong> as a <strong>Corporal First Class (CFC) Combat Medic & Ambulance Medic</strong> at Kranji Camp 3. He completed BMT at Pulau Tekong and EMT training at Nee Soon Camp, earning the <strong>Medical Contingent Star Award twice</strong> and serving at NDP 2022/2023!",
-      actions: [{ text: '🎖️ Scroll to National Service', type: 'scroll', target: '#ns' }]
+      answer: "🎖️ Santhosh served as a <strong>Corporal First Class (CFC) Combat Medic & Ambulance Medic</strong> in the <strong>Singapore Armed Forces (SAF)</strong> at Kranji Camp 3 (Aug 2021 – Aug 2023). He earned the <strong>Medical Contingent Star Award twice</strong>, served at NDP 2022/2023 and SAF Day Parades, and holds an official Recommendation Letter from his Medical Center Doctor!",
+      actions: [
+        { text: '🎖️ Scroll to National Service', type: 'scroll', target: '#ns' },
+        { text: '📄 View Recommendation Letter', type: 'prompt', value: 'Tell me about the recommendation letter' }
+      ]
     },
     {
       patterns: [/star award/i, /medals/i, /military award/i],
@@ -399,8 +421,12 @@
       actions: [{ text: '🚀 Scroll to Projects', type: 'scroll', target: '#projects' }]
     },
     {
-      patterns: [/skills/i, /programming/i, /languages/i, /stack/i, /tools/i, /technologies/i, /frameworks/i],
-      answer: "🛠️ <strong>Santhosh's Skills & Stack:</strong><br>• Languages: Python, Embedded C, Dart, JavaScript, HTML, CSS, SQL<br>• Tech & Tools: Flutter, Node.js, Laravel, FastAPI, LangChain, OpenCV, MediaPipe, Arduino, ESP32, Intel RealSense, YOLOv8, AWS, MongoDB, MSSQL, Docker, Git"
+      patterns: [/skills/i, /programming/i, /languages/i, /stack/i, /tech stack/i, /tools/i, /technologies/i, /frameworks/i, /proficiency/i, /technical proficiency/i, /how much.*experience/i, /tools experience/i, /years of experience/i, /skill.*experience/i, /skills breakdown/i, /i work with/i],
+      answer: "🛠️ <strong>Experience & Technical Proficiency Breakdown:</strong><br>• <strong>Robotics & Hardware:</strong> Arduino (2+ Yrs, 85%), Embedded C (2+ Yrs, 80%), Python (2+ Yrs, 85%), Ubuntu Linux (2+ Yrs, 80%)<br>• <strong>App & Web:</strong> Flutter & Dart (1.5+ Yrs, 85%), HTML5 & CSS3 (2+ Yrs, 90%), JavaScript (2+ Yrs, 80%), Node.js & Laravel (1+ Yr, 75%)<br>• <strong>Cloud & DevOps:</strong> AWS (1+ Yr, 85% — Certified Data Engineer), Git & GitHub (2+ Yrs, 90%), Docker (1+ Yr, 75%), Postman (1.5+ Yrs, 85%)<br>• <strong>Databases & IDEs:</strong> MongoDB & MSSQL (1.5+ Yrs, 80%), VS Code (2+ Yrs, 95%), Android Studio (1.5+ Yrs, 80%)",
+      actions: [
+        { text: '🛠️ Scroll to Tools Section', type: 'scroll', target: '#about' },
+        { text: '🚀 Show Top Projects', type: 'prompt', value: 'Show featured projects' }
+      ]
     },
     {
       patterns: [/who is/i, /about/i, /bio/i, /profile/i, /background/i, /overview/i, /who/i],
@@ -412,10 +438,10 @@
     },
     {
       patterns: [/email/i, /mail/i, /gmail/i, /phone|number/i, /contact/i, /reach/i, /hire/i, /linkedin/i, /github/i, /instagram/i],
-      answer: "📩 <strong>Contact Santhosh:</strong><br>📧 Email: <a href='mailto:santhoshpanneer03@gmail.com'>santhoshpanneer03@gmail.com</a><br>🔗 LinkedIn: <a href='https://www.linkedin.com/in/santhosh-panneer-selvam-547721358/' target='_blank'>Santhosh Panneer Selvam</a><br>💻 GitHub: <a href='https://github.com/santhoshh-maax' target='_blank'>santhoshh-maax</a><br>📸 Instagram: @santhosh_ps22",
+      answer: "📩 <strong>Contact Santhosh:</strong><br>📍 Location: Singapore 560321 (<a href='https://maps.app.goo.gl/TPyzFZSHfYwwRetH7' target='_blank'>View on Google Maps</a>)<br>📧 Email: <a href='mailto:santhoshpanneer03@gmail.com'>santhoshpanneer03@gmail.com</a><br>🔗 LinkedIn: <a href='https://www.linkedin.com/in/santhosh-panneer-selvam-547721358/' target='_blank'>Santhosh Panneer Selvam</a><br>💻 GitHub: <a href='https://github.com/santhoshh-maax' target='_blank'>santhoshh-maax</a><br>📸 Instagram: @santhosh_ps22",
       actions: [
         { text: '📩 Open Contact Form', type: 'scroll', target: '#contact' },
-        { text: '✉ Send Direct Email', type: 'link', url: 'mailto:santhoshpanneer03@gmail.com' }
+        { text: '🗺️ Open Google Maps', type: 'link', url: 'https://maps.app.goo.gl/TPyzFZSHfYwwRetH7' }
       ]
     },
     {
@@ -425,7 +451,7 @@
     },
     {
       patterns: [/\bhi\b/i, /\bhello\b/i, /\bhey\b/i, /\bstart\b/i, /\bhelp\b/i, /who are you/i],
-      answer: "👋 Hi there! I'm <strong>SP-AI</strong>, Santhosh's AI Assistant. Ask me anything about his college, degree, projects (Road Bot, RAG Chatbot), Glacien.ai work, AWS certifications, or National Service!"
+      answer: "👋 Hi there! I'm <strong>SP-AI</strong>, Santhosh's Interactive Portfolio Guide. Ask me anything about his projects, Glacien.ai role, Doctor Recommendation Letter, Singapore location, or technical tool proficiencies!"
     }
   ];
 
@@ -562,12 +588,14 @@
     chatHistory = [
       {
         sender: 'bot',
-        html: " <strong>Welcome to Santhosh's Portfolio!</strong><br>I am the <strong>Interactive Portfolio Guide</strong>, built to guide visitors through Santhosh's robotics projects, education, Glacien.ai work, AWS certifications, and contact info. What would you like to explore?",
+        html: "👋 <strong>Welcome to Santhosh's Portfolio!</strong><br>I am the <strong>Interactive Portfolio Guide</strong>. Ask me anything about his robotics projects, education, Glacien.ai work, Doctor Recommendation Letter, Singapore location, or technical tool proficiency!",
         actions: [
           { text: '👤 Profile', type: 'prompt', value: 'Who is Santhosh?' },
-          { text: '🎓 College', type: 'prompt', value: 'What college is he studying at?' },
-          { text: '🚀 Top Projects', type: 'prompt', value: 'Show featured projects' },
-          { text: '💼 Experience', type: 'prompt', value: 'What is his work experience?' }
+          { text: '💼 Experience', type: 'prompt', value: 'What is his work experience?' },
+          { text: '📄 Recommendation', type: 'prompt', value: 'Tell me about the recommendation letter' },
+          { text: '🛠️ Tool Proficiency', type: 'prompt', value: 'What is his technical proficiency and tools experience?' },
+          { text: '📍 Location', type: 'prompt', value: 'Where is Santhosh located?' },
+          { text: '🚀 Projects', type: 'prompt', value: 'Show featured projects' }
         ]
       }
     ];
