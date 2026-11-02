@@ -465,6 +465,15 @@
       ]
     },
     {
+      patterns: [/microcontroller\s*ai\s*lab/i, /ai\s*lab/i, /microcontroller/i, /virtual\s*circuit/i, /circuit\s*lab/i, /circuit\s*validation/i, /electronics\s*learning/i, /arduino\s*(uno|r3)?/i, /esp32.*circuit/i, /ai\s*tutor/i, /claude\s*api/i],
+      answer: "⚡ <strong>Microcontroller AI Lab – An AI-Powered Electronics Learning Platform</strong><br>A browser-based AI-powered virtual circuit lab for Arduino Uno R3 and ESP32 built using HTML, CSS, JavaScript, Node.js, Express.js, and the Anthropic Claude API. It features drag-and-drop components, real-time circuit validation, code generation, browser-based simulation, and an interactive AI tutor for electronics learning.",
+      actions: [
+        { text: '💻 GitHub Repo', type: 'link', url: 'https://github.com/santhoshh-maax/Full-Stack-AI-BootCamp.git' },
+        { text: '▶ Watch Video', type: 'link', url: 'https://youtu.be/yTohtDaPciE' },
+        { text: '🚀 View in Projects', type: 'scroll', target: '#project-ai-lab' }
+      ]
+    },
+    {
       patterns: [/rag/i, /retrieval/i, /mongodb/i, /ollama/i, /gemma/i, /langchain/i, /fastapi/i],
       answer: "⚡ <strong>RAG Chatbot</strong><br>Built using MongoDB Atlas Vector Search, Ollama (Gemma 3), LangChain, and FastAPI. It performs context-aware document retrieval and local LLM response streaming.",
         actions: [
@@ -514,7 +523,7 @@
     },
     {
       patterns: [/projects/i, /project/i, /what has he built/i, /apps/i, /work done/i],
-      answer: "🚀 <strong>Santhosh's Top Projects:</strong><br>1. 🤖 <em>Road Bot</em> — AI Pothole Repair Rover<br>2. 🧠 <em>RAG Chatbot</em> — MongoDB Vector & Ollama<br>3. 🩼 <em>Step Assist</em> — Smart IoT Crutch<br>4. 📱 <em>Todo's Lah</em> — Flutter App<br>5. 🚽 <em>Smart Toilet System</em> — ESP32 & Telegram<br>6. 🖐️ <em>Gesture Control</em> — MediaPipe & OpenCV<br>7. 🌱 <em>Automated Plant Monitor</em> — Arduino & SMS",
+      answer: "🚀 <strong>Santhosh's Top Projects:</strong><br>1. 🤖 <em>Road Bot</em> — AI Pothole Repair Rover<br>2. ⚡ <em>Microcontroller AI Lab</em> — Virtual Circuit Lab & AI Tutor<br>3. 🧠 <em>RAG Chatbot</em> — MongoDB Vector & Ollama<br>4. 🩼 <em>Step Assist</em> — Smart IoT Crutch<br>5. 📱 <em>Todo's Lah</em> — Flutter App<br>6. 🚽 <em>Smart Toilet System</em> — ESP32 & Telegram<br>7. 🖐️ <em>Gesture Control</em> — MediaPipe & OpenCV<br>8. 🌱 <em>Automated Plant Monitor</em> — Arduino & SMS",
       actions: [{ text: '🚀 Scroll to Projects', type: 'scroll', target: '#projects' }]
     },
 
@@ -678,9 +687,10 @@
     chatHistory = [
       {
         sender: 'bot',
-        html: "👋 <strong>Welcome to Santhosh's Portfolio!</strong><br>I am the <strong>Interactive Portfolio Guide</strong>. Ask me anything about his robotics projects, education, Glacien.ai work, Doctor Recommendation Letter, Singapore location, or technical tool proficiency!",
+        html: "👋 <strong>Welcome to Santhosh's Portfolio!</strong><br>I am the <strong>Interactive Portfolio Guide</strong>. Ask me anything about his robotics & AI projects (like Microcontroller AI Lab & Road Bot), education, Glacien.ai work, Doctor Recommendation Letter, Singapore location, or technical tool proficiency!",
         actions: [
           { text: '👤 Profile', type: 'prompt', value: 'Who is Santhosh?' },
+          { text: '⚡ AI Lab', type: 'prompt', value: 'Tell me about Microcontroller AI Lab' },
           { text: '💼 Experience', type: 'prompt', value: 'What is his work experience?' },
           { text: '📄 Recommendation', type: 'prompt', value: 'Tell me about the recommendation letter' },
           { text: '🛠️ Tool Proficiency', type: 'prompt', value: 'What is his technical proficiency and tools experience?' },
