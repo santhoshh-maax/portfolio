@@ -394,7 +394,7 @@
         /frameworks?/i,
         /skills?/i
       ],
-      answer: "🛠️ <strong>Experience & Technical Proficiency Breakdown:</strong><br>• <strong>Robotics & Hardware:</strong> Arduino (2+ Yrs, 85%), Embedded C (2+ Yrs, 80%), Python (2+ Yrs, 85%), Ubuntu Linux (2+ Yrs, 80%)<br>• <strong>App & Web:</strong> Flutter & Dart (1.5+ Yrs, 85%), HTML5 & CSS3 (2+ Yrs, 90%), JavaScript (2+ Yrs, 80%), Node.js & Laravel (1+ Yr, 75%)<br>• <strong>Cloud & DevOps:</strong> AWS (1+ Yr, 85% — Certified Data Engineer), Git & GitHub (2+ Yrs, 90%), Docker (1+ Yr, 75%), Postman (1.5+ Yrs, 85%)<br>• <strong>Databases & IDEs:</strong> MongoDB & MSSQL (1.5+ Yrs, 80%), VS Code (2+ Yrs, 95%), Android Studio (1.5+ Yrs, 80%)",
+      answer: "🛠️ <strong>Experience & Technical Proficiency Breakdown:</strong><br>• <strong>Robotics & Hardware:</strong> Arduino (2+ Yrs, 85%), Embedded C (2+ Yrs, 80%), Python (2+ Yrs, 85%), Ubuntu Linux (2+ Yrs, 80%)<br>• <strong>App & Web:</strong> Flutter & Dart (1.5+ Yrs, 85%), HTML5 & CSS3 (2+ Yrs, 90%), JavaScript (2+ Yrs, 80%), Node.js & Laravel (1+ Yr, 75%)<br>• <strong>Cloud & DevOps:</strong> AWS (1+ Yr, 85% — Certified Data Engineer & AI Practitioner), Git & GitHub (2+ Yrs, 90%), Docker (1+ Yr, 75%), Postman (1.5+ Yrs, 85%)<br>• <strong>Databases & IDEs:</strong> MongoDB & MSSQL (1.5+ Yrs, 80%), VS Code (2+ Yrs, 95%), Android Studio (1.5+ Yrs, 80%)",
       actions: [
         { text: '🛠️ Scroll to Tools Section', type: 'scroll', target: '#about' },
         { text: '🚀 Show Top Projects', type: 'prompt', value: 'Show featured projects' }
@@ -449,10 +449,11 @@
       answer: "⭐ Santhosh received the <strong>SAF Medical Contingent Star Award twice (2022, 2023)</strong> for excellence during his National Service."
     },
     {
-      patterns: [/aws/i, /amazon web services/i, /data engineer/i, /credly/i, /aws cert/i],
-      answer: "🏅 Santhosh holds the <strong>AWS Certified Data Engineer - Associate</strong> credential, along with 20+ specialized AWS course certificates spanning Agentic AI, Bedrock, S3 Vectors, Prompt Engineering, and Modern Data Architecture!",
+      patterns: [/aws/i, /amazon web services/i, /data engineer/i, /ai practitioner/i, /aif(-c01)?/i, /credly/i, /aws cert/i, /cloud cert/i],
+      answer: "🏅 Santhosh holds two official AWS certifications:<br>• <strong>AWS Certified Data Engineer – Associate</strong><br>• <strong>AWS Certified AI Practitioner</strong> (Foundational Level)<br><br>Along with 20+ specialized AWS course certificates spanning Agentic AI, Bedrock, S3 Vectors, Prompt Engineering, and Modern Data Architecture!",
       actions: [
-        { text: '🏅 Verify AWS Badge', type: 'link', url: 'https://www.credly.com/badges/d4df2afa-c578-4e9c-97f8-857c2f0f5f37/public_url' },
+        { text: '🏅 Verify Data Engineer Badge', type: 'link', url: 'https://www.credly.com/badges/d4df2afa-c578-4e9c-97f8-857c2f0f5f37/public_url' },
+        { text: '🤖 Verify AI Practitioner Badge', type: 'link', url: 'https://www.credly.com/badges/1d690d53-7396-47c7-90c7-fb2fe14cd98c/public_url' },
         { text: '🏆 Scroll to Academics & Certs', type: 'scroll', target: '#academics' }
       ]
     },
@@ -518,8 +519,12 @@
       answer: "🥉 Santhosh won <strong>3rd Runners Up</strong> at the CMTI 2026 Design & Innovation Clinic in Bengaluru."
     },
     {
-      patterns: [/care college/i, /dsu/i, /dhanalakshmi/i, /ramakrishnan/i, /prizes/i, /hackathons/i, /expo/i, /awards|achievements/i],
-      answer: "🏆 <strong>Key Achievements & Awards:</strong><br>• SIH 2025 Hardware Finalist (Delhi)<br>• CMTI 2026 3rd Runner Up (Bengaluru)<br>• 1st Prize Project Expo @ CARE College, Trichy<br>• 2nd Prize Paper Presentation @ CARE College, Trichy<br>• 2nd Prize Startup Pitching @ Dhanalakshmi Srinivasan University<br>• 1st Prize Project Expo @ K.Ramakrishnan College of Engineering"
+      patterns: [/care college/i, /dsu/i, /dhanalakshmi/i, /ramakrishnan/i, /prizes/i, /hackathons/i, /expo/i, /awards|achievements/i, /certificat(e|ion)s?/i],
+      answer: "🏆 <strong>Key Achievements & Certifications:</strong><br>• <strong>AWS Certified Data Engineer – Associate</strong><br>• <strong>AWS Certified AI Practitioner</strong> (Foundational)<br>• SIH 2025 Hardware Finalist (Delhi)<br>• CMTI 2026 3rd Runner Up (Bengaluru)<br>• 1st Prize Project Expo @ CARE College, Trichy<br>• 2nd Prize Paper Presentation @ CARE College, Trichy<br>• 2nd Prize Startup Pitching @ Dhanalakshmi Srinivasan University<br>• 1st Prize Project Expo @ K.Ramakrishnan College of Engineering",
+      actions: [
+        { text: '🏆 Scroll to Academics & Certs', type: 'scroll', target: '#academics' },
+        { text: '🏅 Verify AWS Badges', type: 'prompt', value: 'Tell me about AWS certification' }
+      ]
     },
     {
       patterns: [/projects/i, /project/i, /what has he built/i, /apps/i, /work done/i],
@@ -687,9 +692,10 @@
     chatHistory = [
       {
         sender: 'bot',
-        html: "👋 <strong>Welcome to Santhosh's Portfolio!</strong><br>I am the <strong>Interactive Portfolio Guide</strong>. Ask me anything about his robotics & AI projects (like Microcontroller AI Lab & Road Bot), education, Glacien.ai work, Doctor Recommendation Letter, Singapore location, or technical tool proficiency!",
+        html: "👋 <strong>Welcome to Santhosh's Portfolio!</strong><br>I am the <strong>Interactive Portfolio Guide</strong>. Ask me anything about his robotics & AI projects (like Microcontroller AI Lab & Road Bot), education, AWS certifications (Data Engineer & AI Practitioner), Glacien.ai work, Doctor Recommendation Letter, Singapore location, or technical tool proficiency!",
         actions: [
           { text: '👤 Profile', type: 'prompt', value: 'Who is Santhosh?' },
+          { text: '🏆 AWS & Certs', type: 'prompt', value: 'Tell me about AWS certification & awards' },
           { text: '⚡ AI Lab', type: 'prompt', value: 'Tell me about Microcontroller AI Lab' },
           { text: '💼 Experience', type: 'prompt', value: 'What is his work experience?' },
           { text: '📄 Recommendation', type: 'prompt', value: 'Tell me about the recommendation letter' },
