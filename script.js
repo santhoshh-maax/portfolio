@@ -555,7 +555,7 @@
     },
     {
       patterns: [/\bhi\b/i, /\bhello\b/i, /\bhey\b/i, /\bstart\b/i, /\bhelp\b/i, /who are you/i],
-      answer: "👋 Hi there! I'm <strong>SP-AI</strong>, Santhosh's Interactive Portfolio Guide. Ask me anything about his projects, Glacien.ai role, Doctor Recommendation Letter, Singapore location, technical skills, or his Photography & Instagram (@santhosh_frames)!"
+      answer: "👋 Hi there! I'm <strong>SP-AI</strong>, Santhosh's Interactive Portfolio Guide. Ask me anything about his Forward Deployed Engineer role, Cloud(AWS), AI projects, Glacien.ai work, Doctor Recommendation Letter, Singapore location, technical skills, or his Photography & Instagram (@santhosh_frames)!"
     }
   ];
 
@@ -692,7 +692,7 @@
     chatHistory = [
       {
         sender: 'bot',
-        html: "👋 <strong>Welcome to Santhosh's Portfolio!</strong><br>I am the <strong>Interactive Portfolio Guide</strong>. Ask me anything about his robotics & AI projects (like Microcontroller AI Lab & Road Bot), education, AWS certifications (Data Engineer & AI Practitioner), Glacien.ai work, Doctor Recommendation Letter, Singapore location, or technical tool proficiency!",
+        html: "👋 <strong>Welcome to Santhosh's Portfolio!</strong><br>I am the <strong>Interactive Portfolio Guide</strong>. Ask me anything about his Forward Deployed Engineer and Cloud(AWS) & AI projects (like Microcontroller AI Lab & Road Bot), education, AWS certifications (Data Engineer & AI Practitioner), Glacien.ai work, Doctor Recommendation Letter, Singapore location, or technical tool proficiency!",
         actions: [
           { text: '👤 Profile', type: 'prompt', value: 'Who is Santhosh?' },
           { text: '🏆 AWS & Certs', type: 'prompt', value: 'Tell me about AWS certification & awards' },
